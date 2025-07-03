@@ -36,8 +36,8 @@ export function CatFeedingGame() {
   return (
     <div className="w-full h-full relative bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 flex items-center justify-center overflow-hidden">
       <div
-        className="relative w-full max-w-md h-full max-h-[700px] bg-amber-50 border-4 border-amber-900 rounded-lg overflow-hidden"
-        style={{ aspectRatio: "400/700" }}
+        className="relative w-full h-full bg-amber-50 border-4 border-amber-900 rounded-lg overflow-hidden"
+        style={{ width: "400px", height: "700px", maxWidth: "100vw", maxHeight: "100vh" }}
       >
         {/* Üst bilgi paneli */}
         <div className="absolute top-3 right-16 z-50 text-gray-800 font-bold text-sm text-right bg-white bg-opacity-80 p-2 rounded-lg">

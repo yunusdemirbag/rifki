@@ -88,7 +88,7 @@ export function GameCanvas({
       food: "/mama.png",
       water: "/su.png",
       woman: "/af.png",
-      room: "/oda.svg",
+      room: "/oda.png",
     };
     let loadedCount = 0;
     const totalImages = Object.keys(imageUrls).length;
