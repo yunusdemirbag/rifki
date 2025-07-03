@@ -110,8 +110,8 @@ export function GameCanvas({
   useEffect(() => {
     if (gamePhase === "playing") {
       const initialCats: Cat[] = [
-        { id: "misa", name: "Mişa", x: 50, y: 380, width: 70, height: 70, color: "#666", currentNeed: null, isSatisfied: false },
-        { id: "pars", name: "Pars", x: 150, y: 500, width: 70, height: 70, color: "#DAA520", currentNeed: null, isSatisfied: false },
+        { id: "misa", name: "İstanbul", x: 50, y: 380, width: 70, height: 70, color: "#666", currentNeed: null, isSatisfied: false },
+        { id: "pars", name: "Rifki", x: 150, y: 500, width: 70, height: 70, color: "#DAA520", currentNeed: null, isSatisfied: false },
       ];
       const initialItems: Item[] = [
         { id: "food", type: "food", x: 40, y: 620, width: 60, height: 60, color: "#8B4513", originalX: 40, originalY: 620, isDragging: false },
@@ -248,8 +248,8 @@ export function GameCanvas({
     // --- YENİ: Daha fazla diyalog çeşidi ---
     if (cat.id === "misa") { 
         const messages = need === "food" 
-            ? ["Anneciğim, karnım acıktı 🥺", "Biraz mama alabilir miyim?", "Miyav.. Acıktım...", "Anne yemek! Lütfen?", "Karnım gurulduyor da..."] 
-            : ["Anne, dilim damağım kurudu 💧", "Su verebilir misin?", "Susadım anneciğim...", "Birazcık su lütfen?", "Mümkünse biraz su?"];
+            ? ["Anne, karnım acıktı 🥺", "Biraz mama alabilir miyim?", "Miyav.. Acıktım...", "Anne yemek! Lütfen?", "Karnım gurulduyor da..."] 
+            : ["Anne, dilim damağım kurudu 💧", "Su verebilir misin?", "Susadım anne...", "Birazcık su lütfen?", "Mümkünse biraz su?"];
         return messages[Math.floor(Math.random() * messages.length)]; 
     } else { 
         const messages = need === "food" 
@@ -263,15 +263,15 @@ export function GameCanvas({
     // --- YENİ: Daha fazla diyalog çeşidi ---
     let normalReactions: string[] = []; 
     if (cat.id === 'pars') { 
-        normalReactions = ["Tamam oğlum, hemen getiriyorum!", "Aç mı kalmış benim aslan oğlum?", "Oğlum, Parsss, yapma annem!", `Yine mi acıktın yakışıklım?`, "Pars! Sabret, geliyor!", "Geliyor benim kuzumun yemeği."]; 
+        normalReactions = ["Tamam oğlum, hemen getiriyorum!", "Aç mı kalmış benim aslan oğlum?", "Oğlum, Rifki, yapma annem!", `Yine mi acıktın yakışıklım?`, "Rifki! Sabret, geliyor!", "Geliyor benim kuzumun yemeği."]; 
     } else if (cat.id === 'misa') { 
-        normalReactions = ["Mişa, kızımmm, tamam.", "Geliyor prensesimin maması.", `Güzel kızım benim, susadın mı?`, "Hemen bakıyorum Mişa'ma.", "Tabii ki bebeğim, hemen."]; 
+        normalReactions = ["İstanbul, kızımmm, tamam.", "Geliyor prensesimin maması.", `Güzel kızım benim, susadın mı?`, "Hemen bakıyorum İstanbul'a.", "Tabii ki bebeğim, hemen."]; 
     } 
-    const complaintReactions = [ "Of yine mi acıktınız!", "Daha yeni yemedin mi sen?", "Biraz da kendiniz alın şuradan!", "Afra anne yoruldu ama!", "Yetişemiyorum size yahu!", "Bu kedilerin midesi dipsiz kuyu!" ]; 
+    const complaintReactions = [ "Of yine mi acıktınız!", "Daha yeni yemedin mi sen?", "Biraz da kendiniz alın şuradan!", "HusnaNur anne yoruldu ama!", "Yetişemiyorum size yahu!", "Bu kedilerin midesi dipsiz kuyu!" ]; 
     const reactionList = Math.random() < 0.8 ? normalReactions : complaintReactions; 
     const text = reactionList[Math.floor(Math.random() * reactionList.length)]; 
     const bubbleX = 240 + (135/2); 
-    const bubbleY = 370 - BUBBLE_OFFSET; // Afra'nın y'sinden ofset kadar yukarı
+    const bubbleY = 370 - BUBBLE_OFFSET; // HusnaNur'un y'sinden ofset kadar yukarı
     const bubble: SpeechBubble = { id: `woman_bubble_${Date.now()}`, x: bubbleX, y: bubbleY, text, color: "#FFE4E1", timestamp: Date.now() }; 
     setSpeechBubbles((prev) => [...prev, bubble]); 
     setTimeout(() => setSpeechBubbles((prev) => prev.filter((b) => b.id !== bubble.id)), 3000);
@@ -309,7 +309,7 @@ export function GameCanvas({
   };
 
   const handleWrongDelivery = (cat: Cat) => {
-    playHit(); const wrongReactions = cat.id === 'misa' ? ["Ama ben onu istememiştim ki... 😔", "Yanlış oldu anneciğim..."] : ["BU DEĞİL! DİĞERİ! 😠", "Anne! Dikkatini ver!"]; showSpeechBubble(cat, wrongReactions[Math.floor(Math.random()*wrongReactions.length)], "#FFB6C1", null);
+    playHit(); const wrongReactions = cat.id === 'misa' ? ["Ama ben onu istememiştim ki... 😔", "Yanlış oldu anne..."] : ["BU DEĞİL! DİĞERİ! 😠", "Anne! Dikkatini ver!"]; showSpeechBubble(cat, wrongReactions[Math.floor(Math.random()*wrongReactions.length)], "#FFB6C1", null);
   };
 
   const getEventPos = (e: MouseEvent | Touch): { x: number; y: number } => { const canvas = canvasRef.current; if (!canvas) return { x: 0, y: 0 }; const rect = canvas.getBoundingClientRect(); const scaleX = canvas.width / rect.width; const scaleY = canvas.height / rect.height; return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY }; };
@@ -367,7 +367,7 @@ export function GameCanvas({
         ctx.fillStyle = "black";
         ctx.font = "bold 18px Arial";
         ctx.textAlign = "center";
-        ctx.fillText("Afra", womanX + womanWidth / 2, womanY + womanHeight + 24);
+        ctx.fillText("HusnaNur", womanX + womanWidth / 2, womanY + womanHeight + 24);
       }
       if (gamePhase === "playing") requestAnimationFrame(animate);
     };
