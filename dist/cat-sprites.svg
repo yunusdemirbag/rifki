@@ -1,0 +1,65 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cat Misa (Gray) -->
+  <g id="misa">
+    <rect x="20" y="100" width="80" height="80" fill="#666" rx="10"/>
+    <!-- Eyes -->
+    <circle cx="40" cy="120" r="8" fill="white"/>
+    <circle cx="80" cy="120" r="8" fill="white"/>
+    <circle cx="40" cy="120" r="4" fill="black"/>
+    <circle cx="80" cy="120" r="4" fill="black"/>
+    <!-- Ears -->
+    <polygon points="25,100 35,80 45,100" fill="#666"/>
+    <polygon points="75,100 85,80 95,100" fill="#666"/>
+    <!-- Nose -->
+    <polygon points="60,130 55,140 65,140" fill="pink"/>
+    <!-- Whiskers -->
+    <line x1="30" y1="135" x2="10" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="30" y1="145" x2="10" y2="145" stroke="black" stroke-width="2"/>
+    <line x1="90" y1="135" x2="110" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="90" y1="145" x2="110" y2="145" stroke="black" stroke-width="2"/>
+  </g>
+  
+  <!-- Cat Pars (Golden) -->
+  <g id="pars">
+    <rect x="200" y="100" width="80" height="80" fill="#DAA520" rx="10"/>
+    <!-- Eyes -->
+    <circle cx="220" cy="120" r="8" fill="white"/>
+    <circle cx="260" cy="120" r="8" fill="white"/>
+    <circle cx="220" cy="120" r="4" fill="black"/>
+    <circle cx="260" cy="120" r="4" fill="black"/>
+    <!-- Ears -->
+    <polygon points="205,100 215,80 225,100" fill="#DAA520"/>
+    <polygon points="255,100 265,80 275,100" fill="#DAA520"/>
+    <!-- Nose -->
+    <polygon points="240,130 235,140 245,140" fill="pink"/>
+    <!-- Whiskers -->
+    <line x1="210" y1="135" x2="190" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="210" y1="145" x2="190" y2="145" stroke="black" stroke-width="2"/>
+    <line x1="270" y1="135" x2="290" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="270" y1="145" x2="290" y2="145" stroke="black" stroke-width="2"/>
+  </g>
+  
+  <!-- Food Bowl -->
+  <g id="food">
+    <circle cx="60" cy="250" r="30" fill="#8B4513"/>
+    <circle cx="60" cy="245" r="25" fill="#CD853F"/>
+    <text x="60" y="255" text-anchor="middle" font-size="20" fill="white">🍽️</text>
+  </g>
+  
+  <!-- Water Bowl -->
+  <g id="water">
+    <circle cx="200" cy="250" r="30" fill="#4169E1"/>
+    <circle cx="200" cy="245" r="25" fill="#6495ED"/>
+    <text x="200" y="255" text-anchor="middle" font-size="20" fill="white">💧</text>
+  </g>
+  
+  <!-- Background Room -->
+  <g id="room">
+    <rect x="0" y="0" width="400" height="300" fill="#f4e4bc"/>
+    <!-- Floor pattern -->
+    <pattern id="floorTiles" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="20" height="20" fill="#e6d7a8" stroke="#d4c491" stroke-width="1"/>
+    </pattern>
+    <rect x="0" y="200" width="400" height="100" fill="url(#floorTiles)"/>
+  </g>
+</svg>

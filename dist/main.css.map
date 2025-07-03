@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../client/src/index.css"],
+  "sourcesContent": ["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base {\n  * {\n    @apply border-border;\n  }\n\n  body {\n    @apply font-sans antialiased bg-background text-foreground;\n    margin: 0;\n    padding: 0;\n    overflow: hidden;\n    width: 100vw;\n    height: 100vh;\n  }\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n}\n\ncanvas {\n  width: 100% !important;\n  height: 100% !important;\n  touch-action: none;\n}"],
+  "mappings": "AAAA,UAAU,KACV,UAAU,WACV,UAAU,UAEV,YACE,EACE,OAAO,cACT,CAEA,KACE,OAAO,UAAU,YAAY,cAAc,gBAV/C,OAWY,EAXZ,QAYa,EACT,SAAU,OACV,MAAO,MACP,OAAQ,KACV,CACF,CAEA,CAAC,KACC,MAAO,KACP,OAAQ,KACR,SAAU,KACZ,CAEA,OACE,MAAO,eACP,OAAQ,eACR,aAAc,IAChB",
+  "names": []
+}
